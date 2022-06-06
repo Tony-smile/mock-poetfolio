@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+$footercolou: #000124;
+$blue : #007ffa;
+$white: #f8f9f6;
+$navy: #063f7c;
+$orange: #e0ac1c;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "article article article article"
+    "footer footer footer footer";
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+  margin: 0;
+}
+body{
+  background-color:$orange;
+}
+
+#pageHeader {
+  display: flex;
+  flex-direction: row;
+  grid-area: header;
+  justify-content: stretch;
+}
+
+#pageFooter {
+  grid-area: footer;
+}
+
+#mainArticle {
+  grid-area: article;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: $navy;
+  color:$white;
+
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    width: 100%;
+    border: 2px solid orange;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(119, 152, 206, 0.15);
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+
+  .container .title {
+    font-size: 3rem;
+    font-weight: 800;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+
+  }
+
+  .container .content {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .cent {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+flex-direction: column;
+  }
+
+  .container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: orange;
+  }
+
+  .content form .user-details {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // margin: 20px 20 0px 0px;
+    gap: 15px;
+
+    align-items: center;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 10px);
+  }
+
+  form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+  }
+
+  .user-details .input-box input {
+    height: 50px;
+    width: 300px;
+    outline: none;
+    font-size: 1.5rem;
+
+    border-radius: 10px;
+    padding-left: 15px;
+    border: 1px solid $footercolou;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid {
+    border-color: orange;
+  }
+
+  form .gender-details .gender-title {
+    font-size: 3rem;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 35px;
+    width: 200px;
+    color: rgb(16, 36, 64);
+    border-radius: 10px;
+
+    border-color: $blue;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.3rem;
+  }
+
+  select option {
+    background-color:$orange;
+    border-radius: 10px;
+  }
+
+  form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  form .button {
+    height: 55px;
+    margin: 35px 0;
+      justify-items: center;
+  }
+
+  form .button input {
+    margin-top: 4%;
+    height: 100%;
+    width: 50%;
+    border-radius: 8px;
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: $footercolou;
+
+  }
+
+  form .button input:hover {
+    /* transform: scale(0.99); */
+    background-color: $blue;
+    color: orange;
+  }
+  form{
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+}
+
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "article article article article"
+      "image image image image"
+      "footer footer footer footer";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-columns: auto;
+    grid-gap: 0px;
+    height: 100vh;
+    margin: 0;
+    font-size: 2em;
+  }
+
+
+
+  #pageHeader {
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+
+  }
+
+  #pageFooter {
+    grid-area: footer;
+  }
+
+  #mainArticle {
+    grid-area: article;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: .5rem;
+    justify-content: center;
+
+    margin-top: 10%;
+
+    .container {
+      max-width: 100%;
+      height: fit-content;
+    }
+
+    form .user-details .input-box {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    form .category {
+      width: 100%;
+
+    }
+
+    .content form .user-details {
+      max-height: fit-content;
+      // overflow-y: scroll;
+    }
+
+
+
+    .container .content .category {
+      flex-direction: column;
+    }
+  }
+
+
+
+}
